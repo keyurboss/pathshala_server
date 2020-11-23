@@ -4,7 +4,7 @@ if (process.env.dev && process.env.dev === 'true') {
 } else {
   ISDEV1 = process.argv.includes('--dev');
 }
-export const IOTtest = process.argv.includes('--Iiot')
+export const IOTtest = process.argv.includes('--Iiot');
 export const ISDEV = ISDEV1;
 export const GlobalVar = {
   db_congif: {
@@ -15,12 +15,12 @@ export const GlobalVar = {
     database: 'booz_dev_server',
   },
   db_congif_dev: {
-    host: "server.rpsoftech.xyz",
-    user: "pathshala_server",
-    password: "JtYd#e$r%10PgRr",
-    database: "pathshala",
+    host: 'server.rpsoftech.xyz',
+    user: 'pathshala_server',
+    password: 'JtYd#e$r%10PgRr',
+    database: 'pathshala',
     connectionLimit: 5,
-    idleTimeout: 10
+    idleTimeout: 10,
   },
   firebase_jwt_key:
     'e0c8d61914d2e87e675ffa1479f7c1f21b3652ed6e0ee46f75cde9fb290a804e48f98e835e724c2d05ea7e8bb1d4069161c27100002813674011915c',
@@ -36,4 +36,9 @@ export const GlobalVar = {
     refreshToken:
       '6ab66677d871ee993d8e11b48b2cdbd281ba8ff2a74bd7e9b3a160c58714e41a15027beeb4042db1d741bfaa20d1fb8b445db073df3680290523bd615915e851',
   },
+};
+export const ServerData = {
+  basicsiteDetails: {},
+  BasicPointDetailsArray: [],
+  BasicPointDetails: {},
 };
