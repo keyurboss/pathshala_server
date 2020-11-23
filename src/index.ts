@@ -33,9 +33,7 @@ setInterval(() => {
 }, 10800000);
 
 app.use('/api', APIsRouter(test));
-app.get('/basicdetails', (req, res) => {
-  res.send(ServerData.basicsiteDetails);
-});
+
 app.post('/restart', (req, res) => {
   if (req.body.pass && req.body.pass === 'KeyurRocks') {
     setTimeout(() => {
@@ -46,13 +44,9 @@ app.post('/restart', (req, res) => {
     res.sendStatus(400);
   }
 });
-app.get('/points_details', (req, res) => {
-  res.send(ServerData.BasicPointDetailsArray);
-});
+
 app.use('/loginserver', LoginRouter(test));
 app.use('**/*', (req, res) => {
-  console.log(req.baseUrl);
-  
   res.sendStatus(404);
 });
 app.use('/test', (req, res) => {
@@ -66,13 +60,13 @@ const PORT = process.env.PORT || 80;
 
 if (ISDEV === false) {
   const privateKey = readFileSync(
-    join(__dirname, ISDEV ? '../keys/private.key' : './keys.booz/private.key'),
+    join(__dirname, ISDEV ? '../keys/private.key' : './keys/private.key'),
     'utf8'
   );
   const certificate = readFileSync(
     join(
       __dirname,
-      ISDEV ? '../keys/certificate.crt' : './keys.booz/certificate.crt'
+      ISDEV ? '../keys/certificate.crt' : './keys/certificate.crt'
     ),
     'utf8'
   );

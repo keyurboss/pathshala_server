@@ -19,8 +19,9 @@ export function LoginRouter(pool: Pool): Router {
             };
             let user = result[0];
             const token = generateAccessToken(user);
+            const refreshT = generateRefreshToken(user);
             res.locals.data.accessToken = token;
-            res.locals.data.refreshToken = generateRefreshToken(user);
+            res.locals.data.refreshToken = refreshT;
             LoginModelObject.addRefreshTokenandMakeEntry(
               user,
               res.locals.data.refreshToken
@@ -41,8 +42,6 @@ export function LoginRouter(pool: Pool): Router {
     let data = req.body;
     if (data.token && typeof data.token !== 'undefined') {
       verify(data.token, GlobalVar.token.refreshToken, (err, user) => {
-        console.log(err);
-
         if (err) return res.sendStatus(403);
         LoginModelObject.gerUserDetails(user)
           .then((result) => {

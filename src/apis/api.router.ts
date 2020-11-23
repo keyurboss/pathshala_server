@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { verify } from 'jsonwebtoken';
 import { Pool } from 'query-builder-mysql';
 import { GlobalVar, ServerData } from '../varable';
-import {APIsModel} from './api.model';
+import { APIsModel } from './api.model';
 export function APIsRouter(pool: Pool): Router {
   const route = Router();
   const ApiModelObject = new APIsModel(pool);
@@ -11,6 +11,12 @@ export function APIsRouter(pool: Pool): Router {
     res.send({
       success: 1,
     });
+  });
+  route.get('/basicdetails', (req, res) => {
+    res.send(ServerData.basicsiteDetails);
+  });
+  route.get('/points_details', (req, res) => {
+    res.send(ServerData.BasicPointDetailsArray);
   });
   route.get('/mydetails', (req, res) => {
     res.send({ success: 1, data: res.locals.user });
