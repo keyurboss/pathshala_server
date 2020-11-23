@@ -1,0 +1,8 @@
+node_modules
+libs
+keys
+libs/*.js
+!pack.js
+dist
+index.js
+test.js
