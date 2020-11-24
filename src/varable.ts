@@ -8,11 +8,12 @@ export const IOTtest = process.argv.includes('--Iiot');
 export const ISDEV = ISDEV1;
 export const GlobalVar = {
   db_congif: {
-    host: 'server.rpsoftech.xyz',
-    user: 'boozserver',
-    password: 'j0L9LES$#QQmqjaw',
-    connectionLimit: 3,
-    database: 'booz_dev_server',
+    host: 'localhost',
+    user: 'server',
+    password: 'GyAnSanskar.com1122',
+    database: 'pathshala',
+    connectionLimit: 5,
+    idleTimeout: 10,
   },
   db_congif_dev: {
     host: 'server.rpsoftech.xyz',

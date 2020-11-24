@@ -46,15 +46,17 @@ app.post('/restart', (req, res) => {
 });
 
 app.use('/loginserver', LoginRouter(test));
-app.use('**/*', (req, res) => {
-  res.sendStatus(404);
-});
 app.use('/test', (req, res) => {
   res.send({ data: 'success' });
 });
-if (ISDEV === false && consoleDev === false) {
-  console.log = () => {};
-}
+app.use('**/*', (req, res) => {
+  res.sendStatus(404);
+});
+
+
+// if (ISDEV === false && consoleDev === false) {
+//   console.log = () => {};
+// }
 
 const PORT = process.env.PORT || 80;
 
