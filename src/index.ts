@@ -19,7 +19,7 @@ if (ISDEV) {
   test = new Pool(GlobalVar.db_congif_dev);
   GlobalVar.token = GlobalVar.dev_token;
 } else {
-  test = new Pool(GlobalVar.db_congif_dev);
+  test = new Pool(GlobalVar.db_congif);
   // test = new Pool(GlobalVar.db_congif);
 }
 app.use(json());
