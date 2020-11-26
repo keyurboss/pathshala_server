@@ -18,6 +18,13 @@ export class LoginModel {
     ]);
     db.join('user_basic as ub', 'ub.user_id = us.user_id', 'left');
     if (params) {
+      if (params.user_id) {
+        if (Array.isArray(params.user_id)) {
+          db.where_in('us.user_id', params.user_id);
+        } else {
+          db.where('us.user_id', params.user_id);
+        }
+      }
       if (params.unique_id) {
         if (Array.isArray(params.unique_id)) {
           db.where_in('us.unique_id', params.unique_id);
@@ -32,11 +39,11 @@ export class LoginModel {
           db.where('us.password', params.password);
         }
       }
-      if (params.user_id) {
-        if (Array.isArray(params.user_id)) {
-          db.where_in('us.user_id', params.user_id);
+      if (params.id) {
+        if (Array.isArray(params.id)) {
+          db.where_in('us.user_id', params.id);
         } else {
-          db.where('us.user_id', params.user_id);
+          db.where('us.user_id', params.id);
         }
       }
     }

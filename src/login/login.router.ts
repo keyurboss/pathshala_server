@@ -10,7 +10,10 @@ export function LoginRouter(pool: Pool): Router {
   route.post('/login', (req, res) => {
     let data = req.body;
     if (data.id && data.password) {
-      LoginModelObject.gerUserDetails(data)
+      LoginModelObject.gerUserDetails({
+        unique_id:data.id,
+        password:data.password
+      })
         .then((result) => {
           if (result.length > 0) {
             res.locals = {

@@ -1,8 +1,8 @@
 export interface GetUserDetailsParams {
-  id: string | string[];
-  unique_id: string | string[];
-  password: string;
-  user_id: string | string[];
+  id?: string | string[];
+  unique_id?: string | string[];
+  password?: string;
+  user_id?: string | string[];
 }
 
 export interface CalculateDataint {
