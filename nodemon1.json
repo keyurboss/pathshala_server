@@ -1,0 +1,5 @@
+{
+  "ignore": ["src/**/*.spec.ts", "**/node_modules/**","dist"],
+  "exec": "npm run start:d",
+  "ext": "ts"
+}

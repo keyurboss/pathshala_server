@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node -r ts-node/register ./src/index.ts --dev",
+    "start:d": "node -r ts-node/register ./data/process.ts --dev",
     "start:watch": "nodemon",
+    "start:watch:d": "nodemon --config nodemon1.json",
     "build": "tsc",
     "pack:2": "node pack.js",
     "pack": "webpack",
@@ -26,9 +28,12 @@
     "@types/cors": "^2.8.8",
     "@types/express": "^4.17.6",
     "@types/jsonwebtoken": "^8.5.0",
+    "@types/md5": "^2.2.1",
     "@types/node": "^14.0.5",
     "@types/validator": "^13.0.0",
     "@vercel/ncc": "^0.25.1",
+    "csv-parser": "^2.3.3",
+    "md5": "^2.3.0",
     "nodemon": "^2.0.4",
     "ts-node": "^8.10.1",
     "typescript": "^3.9.3"
