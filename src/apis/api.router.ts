@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { verify } from 'jsonwebtoken';
 import { Pool } from 'query-builder-mysql';
-import { GlobalVar, ServerData } from '../varable';
+import { GlobalVar, ServerData } from '../variable';
 import { APIsModel } from './api.model';
 export function APIsRouter(pool: Pool): Router {
   const route = Router();
@@ -52,7 +52,7 @@ export function APIsRouter(pool: Pool): Router {
             ? ApiModelObject.calculateData(data.details, data.point_type)
             : 0,
           timestamp: data.timestamp,
-          details: data.details,
+          details: JSON.stringify(data.details),
           created_on: time,
           edited_on: time,
         };
@@ -82,6 +82,9 @@ export function APIsRouter(pool: Pool): Router {
           });
         }
       } catch (e) {
+        console.error(e)
+        console.log(db.last_query_string);
+        
         db.release();
         res.sendStatus(400);
       }

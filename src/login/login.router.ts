@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { verify } from 'jsonwebtoken';
 import { Pool } from 'query-builder-mysql';
-import { GlobalVar } from '../varable';
+import { GlobalVar } from '../variable';
 import { generateAccessToken, generateRefreshToken } from '../generalFunctions';
 import { LoginModel } from './login.model';
 export function LoginRouter(pool: Pool): Router {

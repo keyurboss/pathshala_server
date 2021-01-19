@@ -1,5 +1,5 @@
 import { Pool } from 'query-builder-mysql';
-import { ServerData } from '../varable';
+import { ServerData } from '../variable';
 import { CalculateDataint, FetchPointsInterFace } from '../GeneralInterFace';
 
 export class APIsModel {

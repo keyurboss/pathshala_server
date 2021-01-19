@@ -2,7 +2,7 @@ import { json, urlencoded } from 'body-parser';
 import * as express from 'express';
 import * as cors from 'cors';
 import { Pool } from 'query-builder-mysql';
-import { GlobalVar, ISDEV, ServerData } from './varable';
+import { GlobalVar, ISDEV, ServerData } from './variable';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { createServer as http } from 'http';

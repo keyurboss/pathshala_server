@@ -1,6 +1,6 @@
 import { sign } from 'jsonwebtoken';
 import { Pool } from 'query-builder-mysql';
-import { GlobalVar, ServerData } from './varable';
+import { GlobalVar, ServerData } from './variable';
 
 export async function getSiteBAsicDetails(pool: Pool) {
   ServerData.basicsiteDetails = {};
