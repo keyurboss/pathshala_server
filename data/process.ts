@@ -9,7 +9,7 @@ const R = /\s{2,}/gm;
 const results = [];
 const sanghnames = [];
 const pool = new Pool({
-  host: 'server.rpsoftech.xyz',
+  host: 'server.rpsoftech.net',
   user: 'pathshala_server',
   password: 'JtYd#e$r%10PgRr',
   database: 'pathshala',

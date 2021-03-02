@@ -16,7 +16,7 @@ export const GlobalVar = {
     idleTimeout: 10,
   },
   db_congif_dev: {
-    host: 'server.rpsoftech.xyz',
+    host: 'server.rpsoftech.net',
     user: 'pathshala_server',
     password: 'JtYd#e$r%10PgRr',
     database: 'pathshala',
