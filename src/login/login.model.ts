@@ -14,7 +14,6 @@ export class LoginModel {
       'ub.dob',
       'ub.city',
       'ub.other as user_data',
-      'sd.sangh_name',
     ]);
     db.join('user_basic as ub', 'ub.user_id = us.user_id', 'left');
     if (params) {
@@ -47,7 +46,6 @@ export class LoginModel {
         }
       }
     }
-    db.join('sangh_details as sd', 'sd.sangh_id = ub.sangh', 'left');
     return await db.get('users as us').finally(() => {
       db.release();
     });

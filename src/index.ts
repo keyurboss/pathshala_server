@@ -1,8 +1,7 @@
-import { json, urlencoded } from 'body-parser';
 import * as express from 'express';
 import * as cors from 'cors';
 import { Pool } from 'query-builder-mysql';
-import { GlobalVar, ISDEV, ServerData } from './variable';
+import { GlobalVar, ISDEV } from './variable';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { createServer as http } from 'http';
@@ -22,8 +21,8 @@ if (ISDEV) {
   test = new Pool(GlobalVar.db_congif);
   // test = new Pool(GlobalVar.db_congif);
 }
-app.use(json());
-app.use(urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 getSiteBAsicDetails(test);
 get_points_details(test);
